@@ -8,15 +8,15 @@
    
      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/css/semantic.min.css">
+     <link rel="stylesheet" href="http://cdn.jsdelivr.net/semantic-ui/0.19.3/css/semantic.min.css">
      <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script> 
      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/javascript/semantic.min.js"></script>
+     <script src="http://cdn.jsdelivr.net/semantic-ui/0.19.3/javascript/semantic.min.js"></script>
  
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" /> 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" /> 
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
 
     <style>
 
@@ -120,7 +120,7 @@ header h3
 
 	  <section data-tab="Lab-03" class="ui tab stacked moodle-book segment">
 	     <h1>Objectives</h1>
-<p>Extent the pacemaker application to include Activity and Location classes + associated commands. Once these are in place, incorporate a serialization mechanism to enable users &amp; activities to be persisted to a file. We will then try to generalize this mechanism, which will enable us to experiment with alternative serialization formats.</p>
+<p>Extend the pacemaker application to include Activity and Location classes + associated commands. Once these are in place, incorporate a serialization mechanism to enable users &amp; activities to be persisted to a file. We will then try to generalize this mechanism, which will enable us to experiment with alternative serialization formats.</p>
 	  </section>
 	  <section data-tab="01" class="ui tab stacked moodle-book segment">
 	     <h1>Activity &amp; Location classes</h1>
@@ -933,14 +933,13 @@ $(document).ready(function()
   { 
     // not loaded before - so do the restyling once (need to moodle book print)
     $(".moodle-book img").addClass ("ui image");
-    $(".moodle-book pre").addClass ("ui stacked segment");
+    $(".moodle-book pre").addClass ("ui segment");
     addCaptions();
     seen = 1;
   }
 
 
-});
-</script>
+})</script>
   <br>  
   <div class="ui fixed bottom borderless menu">'
     <div class="ui small item"> 
