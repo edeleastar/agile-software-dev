@@ -4,7 +4,7 @@
      <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
    
-     <title> The Java Programming Language </title>
+     <title> Serialization & Test Driven Development I </title>
    
      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -122,99 +122,84 @@ header h3
     <nav class="ui vertical fluid pointing menu">
       <div class="menu">
         <a class="item" href=" ../topic01/index.html"> Paradigms & Languages </a>
-        <a class="active item" href=" ../topic02/index.html"> The Java Programming Language </a>
+        <a class="item" href=" ../topic02/index.html"> The Java Programming Language </a>
         <a class="item" href=" ../topic03/index.html"> Inheritance & Collections </a>
-        <a class="item" href=" ../topic04/index.html"> Serialization & Test Driven Development I </a>
+        <a class="active item" href=" ../topic04/index.html"> Serialization & Test Driven Development I </a>
       </div>
     </nav>
   </section>
 
   <section class="ui twelve column wide">
     <section class="ui stacked segment">
-      <h1>The Java Programming Language</h1>
+      <h1>Serialization &amp; Test Driven Development I</h1>
       <div class="ui  middle aligned grid">
           <div class="row">   
             <div class="ten column wide">
               <h4 class="ui center aligned header">
-               Introduction
+               Streams
               </h4>
               <div class="ui raised segment">
-                <p>The java programming language is a mature, well understood language that powers many enterprises and public web applications. Originally design for the consumer electronics market, it was quickly adopted as general purpose, versatile language relatively easy to learn and master.</p>
+                <p>At the heart of the JDK are object I/O and Serialization capabilities, packaged into a comprehensive library for managing the life cycle of simple objects. Although the approach taken by this particular base library has to some extent been superseded by other approaches, it remains an important and influential technical approach, that can be usefully applied in simpler standalone applications.</p>
               </div>
             </div>
             <div class="six vertical column wide">
-              <a href="./pdf/a-java-overview.pdf"> 
-                <img class="ui medium image" src="./pdf/a-java-overview.png"> 
+              <a href="./pdf/a-streams.pdf"> 
+                <img class="ui medium image" src="./pdf/a-streams.jpeg"> 
               </a>
             </div>
           </div>
           <div class="row">   
             <div class="ten column wide">
               <h4 class="ui center aligned header">
-               Classes
+               TDD Introduction
               </h4>
               <div class="ui raised segment">
-                <p>Classes are the fundamental abstraction in the language. Understanding their structure, layout and semantics is essential. In particular a clear understanding of the difference between static and regular attributes &amp; methods + the role of the Object pseudo class is essential.</p>
+                <p>Test Driven Development has been among the most influential approaches in recent software engineering history. Here we look at its origins, principles and some of the important benefits of the approach.</p>
               </div>
             </div>
             <div class="six vertical column wide">
-              <a href="./pdf/b-classes.pdf"> 
-                <img class="ui medium image" src="./pdf/b-classes.jpeg"> 
+              <a href="./pdf/b-tdd-intro.pdf"> 
+                <img class="ui medium image" src="./pdf/b-tdd-intro.png"> 
               </a>
             </div>
           </div>
           <div class="row">   
             <div class="ten column wide">
               <h4 class="ui center aligned header">
-               Control Statements
+               First Tests
               </h4>
               <div class="ui raised segment">
-                <p>The set of control statements are largely inherited from C and C++. There are small number of these and their structure and behaviour is largely unsurprising.</p>
+                <p>The essential elements of TDD are fairly easy to grasp. The support libraries (xUnit) are relatively straightforward, and we can expect our IDE to provide direct assistance to using these libraries. Here we look at the facilities Eclipse provides to the JUnit library.</p>
               </div>
             </div>
             <div class="six vertical column wide">
-              <a href="./pdf/c-control-statements.pdf"> 
-                <img class="ui medium image" src="./pdf/c-control-statements.jpeg"> 
+              <a href="./pdf/c-first-tests.pdf"> 
+                <img class="ui medium image" src="./pdf/c-first-tests.jpeg"> 
               </a>
             </div>
           </div>
           <div class="row">   
             <div class="ten column wide">
               <h4 class="ui center aligned header">
-               Object Oriented Concepts
+               Annotations
               </h4>
               <div class="ui raised segment">
-                <p>Behind the language are a set of well-understood principles. These principles are independent of Java, but underpin its structure and meaning. Understanding these principles is important and is a useful starting point for comparing Java and the features of other programming languages.</p>
+                <p>Earlier JUnit libraries relied on Inheritance and specific design patterns to integrate the unit tests into runnable test suites. Modern JUnit relies on Java Annotations - which simplify test structure and enable more flexible structuring of tests classes.</p>
               </div>
             </div>
             <div class="six vertical column wide">
-              <a href="./pdf/d-object-oriented-concepts.pdf"> 
-                <img class="ui medium image" src="./pdf/d-object-oriented-concepts.gif"> 
-              </a>
-            </div>
-          </div>
-          <div class="row">   
-            <div class="ten column wide">
-              <h4 class="ui center aligned header">
-               Assignment 1
-              </h4>
-              <div class="ui raised segment">
-                <p>This is your first assignment. It is a java console application, whose specification is presented here. A useful working pattern over the next few weeks would be to complete each lab, and and then evaluate the specification (and the project of the lab) and see where you need to go with it.</p>
-              </div>
-            </div>
-            <div class="six vertical column wide">
-              <a href="./pdf/e-assignment.pdf"> 
-                <img class="ui medium image" src="./pdf/e-assignment.jpeg"> 
+              <a href="./pdf/d-annotations.pdf"> 
+                <img class="ui medium image" src="./pdf/d-annotations.jpeg"> 
               </a>
             </div>
           </div>
           <div class="row">   
             <div class="ten column wide">
              <h4 class="ui center aligned header">
-               Lab: Lab-02 
+               Lab: Lab-04 
              </h4>
               <div class="ui raised segment">
-                <p>Evolve the application developed in lab01 into a simple command line app. Incorporate commands for creating, deleting and listing users. Explore List, ArrayList, Map, HashMap in this context and introduce the guava and cliche libraries.</p>
+                <p>Equip Pacemaker with JUint libraries and then introduce a range of tests to verify essential features. Correct issues that arise as a result of the tests, becoming familiar with the fail/pass/refactor/pass cycle. Review the outstanding command set of the application.</p>
               </div>
             </div>
             <div class="six column wide center aligned">
