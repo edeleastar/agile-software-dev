@@ -8,11 +8,10 @@
    
      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-     <link rel="stylesheet" href="http://cdn.jsdelivr.net/semantic-ui/0.19.3/css/semantic.min.css">
-     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script> 
-     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script src="http://cdn.jsdelivr.net/semantic-ui/0.19.3/javascript/semantic.min.js"></script>
- 
+     <link rel="stylesheet" href="http://beta.semantic-ui.com/build/packaged/definitions/css/semantic.min.css">
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+     <script src="http://beta.semantic-ui.com/build/packaged/definitions/javascript/semantic.min.js"></script>
+
      <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" /> 
      <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
      <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
@@ -24,7 +23,11 @@
 body 
 {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
-  font-size: 14px
+}
+
+#container
+{
+  margin :10px
 }
 
 code
@@ -55,7 +58,6 @@ h3
   font-size:70%
 }
 
-
 #title 
 {
   font-size:120%;
@@ -67,7 +69,7 @@ h3
 img 
 {
    padding:1px;
-  /* border:1px solid black;*/
+   border:1px solid black;
    margin-top: 10px;
    margin-bottom: 10px;
 }
@@ -99,26 +101,43 @@ header h3
   border-bottom: 0px;
 }
 
+.cover
+{
+    width: 290px;
+    height: 290px;
+    border:1px solid lightgray;
+}
+.image-thumbnail
+{
+    height: 100%;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center;
+}
+
+
+
     </style>
 
   </head>
   <body>
-<header class="ui middle aligned two column raised grid segment">
-  <div class="row">
-    <div class="column">
+<section id="container" class="ui stackable grid">
+
+<!--<div class="row">-->
+  <header class="ui middle aligned grid section">
+    <div class="ten wide column">
       <h1><a href="../index.html"> Agile Software Development </a></h1>
       <h3> </h3>
     </div>
-    <div class="column">
-      <img class="ui image floated right" src="http://www.wit.ie/graphics/top_logo_transparent.png">
-      <img class="ui image floated right" src="http://www.wit.ie/graphics/h1_text.png">
+    <div class="four wide column">
+       <img class="ui image" src="http://www.wit.ie/graphics/h1_text.png">
     </div>
-  </div>
-</header>
-
-<section class="ui grid">
-  
-  <section class="ui four column wide">
+    <div class="two wide column">
+      <img class="ui image" src="http://www.wit.ie/graphics/top_logo_transparent.png">
+    </div>
+  </header>
+<!--</div>-->  <section id="menu" id="topic" class="ui four wide column">
     <nav class="ui vertical fluid pointing menu">
       <div class="menu">
         <a class="item" href=" ../topic01/index.html"> Paradigms & Languages </a>
@@ -129,59 +148,48 @@ header h3
     </nav>
   </section>
 
-  <section class="ui twelve column wide">
-    <section class="ui stacked segment">
+
+
+    <section id="topic" class="ui doubling twelve wide column segment">
       <h1>Inheritance &amp; Collections</h1>
-      <div class="ui  middle aligned grid">
-          <div class="row">   
-            <div class="ten column wide">
-              <h4 class="ui center aligned header">
-               Inheritance
-              </h4>
-              <div class="ui raised segment">
-                <p>Object Oriented thinking has consistently placed the inheritance relationship as a key feature of its approach. We review how this relationship is realized in Java. As you will see it is a complex relationship, and we will return to the difficulties it can cause in a later topic.</p>
-              </div>
-            </div>
-            <div class="six vertical column wide">
-              <a href="./pdf/a-inheritance.pdf"> 
-                <img class="ui medium image" src="./pdf/a-inheritance.jpg"> 
-              </a>
-            </div>
-          </div>
-          <div class="row">   
-            <div class="ten column wide">
-              <h4 class="ui center aligned header">
-               Collections
-              </h4>
-              <div class="ui raised segment">
-                <p>All programming languages will have support for a range of common data structures. Unlike typical dynamic programming language, collections are implemented as a standard library in Java (as opposed to being built in). We will survey the major features of this library, focusing on the principle interfaces and implementations. There is considerable more to collections, which should be investigated independently.</p>
-              </div>
-            </div>
-            <div class="six vertical column wide">
-              <a href="./pdf/b-collections.pdf"> 
-                <img class="ui medium image" src="./pdf/b-collections.jpg"> 
-              </a>
-            </div>
-          </div>
-          <div class="row">   
-            <div class="ten column wide">
-             <h4 class="ui center aligned header">
-               Lab: Lab-03 
-             </h4>
-              <div class="ui raised segment">
-                <p>Extend the pacemaker application to include Activity and Location classes + associated commands. Once these are in place, incorporate a serialization mechanism to enable users &amp; activities to be persisted to a file. We will then try to generalize this mechanism, which will enable us to experiment with alternative serialization formats.</p>
-              </div>
-            </div>
-            <div class="six column wide center aligned">
-              <a  href="./book/index.html"> 
-                  <img class="ui medium image" src="./book/img/main.jpg" alt="Lab"> 
-              </a>
-            </div>
-        </div>
-      </div>
+      <div class="ui cards">
+<div  class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./pdf/a-inheritance.jpg');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./pdf/a-inheritance.pdf" class="header">Inheritance</a>
+  </div>
+  <div class="extra content">
+    <p>Object Oriented thinking has consistently placed the inheritance relationship as a key feature of its approach. We review how this relationship is realized in Java. As you will see it is a complex relationship, and we will return to the difficulties it can cause in a later topic.</p>
+  </div>
+</div><div  class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./pdf/b-collections.jpg');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./pdf/b-collections.pdf" class="header">Collections</a>
+  </div>
+  <div class="extra content">
+    <p>All programming languages will have support for a range of common data structures. Unlike typical dynamic programming language, collections are implemented as a standard library in Java (as opposed to being built in). We will survey the major features of this library, focusing on the principle interfaces and implementations. There is considerable more to collections, which should be investigated independently.</p>
+  </div>
+</div>      </div>
+      <h1> Labs </h1>
+      <div class="ui cards">
+<div class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./book/img/main.jpg');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./book/index.html" class="header">Lab: Lab-03</a>
+  </div>
+  <div class="extra content">
+    <p>Extend the pacemaker application to include Activity and Location classes + associated commands. Once these are in place, incorporate a serialization mechanism to enable users &amp; activities to be persisted to a file. We will then try to generalize this mechanism, which will enable us to experiment with alternative serialization formats.</p>
+  </div>
+</div>      </div>
     </section>
-  </section>
-  
+  </div>
+
 </section>
   <br>  
   <div class="ui fixed bottom borderless menu">'

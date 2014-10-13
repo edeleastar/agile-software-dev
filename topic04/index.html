@@ -8,11 +8,10 @@
    
      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-     <link rel="stylesheet" href="http://cdn.jsdelivr.net/semantic-ui/0.19.3/css/semantic.min.css">
-     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script> 
-     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script src="http://cdn.jsdelivr.net/semantic-ui/0.19.3/javascript/semantic.min.js"></script>
- 
+     <link rel="stylesheet" href="http://beta.semantic-ui.com/build/packaged/definitions/css/semantic.min.css">
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+     <script src="http://beta.semantic-ui.com/build/packaged/definitions/javascript/semantic.min.js"></script>
+
      <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" /> 
      <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
      <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
@@ -24,7 +23,11 @@
 body 
 {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
-  font-size: 14px
+}
+
+#container
+{
+  margin :10px
 }
 
 code
@@ -55,7 +58,6 @@ h3
   font-size:70%
 }
 
-
 #title 
 {
   font-size:120%;
@@ -67,7 +69,7 @@ h3
 img 
 {
    padding:1px;
-  /* border:1px solid black;*/
+   border:1px solid black;
    margin-top: 10px;
    margin-bottom: 10px;
 }
@@ -99,26 +101,43 @@ header h3
   border-bottom: 0px;
 }
 
+.cover
+{
+    width: 290px;
+    height: 290px;
+    border:1px solid lightgray;
+}
+.image-thumbnail
+{
+    height: 100%;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center;
+}
+
+
+
     </style>
 
   </head>
   <body>
-<header class="ui middle aligned two column raised grid segment">
-  <div class="row">
-    <div class="column">
+<section id="container" class="ui stackable grid">
+
+<!--<div class="row">-->
+  <header class="ui middle aligned grid section">
+    <div class="ten wide column">
       <h1><a href="../index.html"> Agile Software Development </a></h1>
       <h3> </h3>
     </div>
-    <div class="column">
-      <img class="ui image floated right" src="http://www.wit.ie/graphics/top_logo_transparent.png">
-      <img class="ui image floated right" src="http://www.wit.ie/graphics/h1_text.png">
+    <div class="four wide column">
+       <img class="ui image" src="http://www.wit.ie/graphics/h1_text.png">
     </div>
-  </div>
-</header>
-
-<section class="ui grid">
-  
-  <section class="ui four column wide">
+    <div class="two wide column">
+      <img class="ui image" src="http://www.wit.ie/graphics/top_logo_transparent.png">
+    </div>
+  </header>
+<!--</div>-->  <section id="menu" id="topic" class="ui four wide column">
     <nav class="ui vertical fluid pointing menu">
       <div class="menu">
         <a class="item" href=" ../topic01/index.html"> Paradigms & Languages </a>
@@ -129,89 +148,68 @@ header h3
     </nav>
   </section>
 
-  <section class="ui twelve column wide">
-    <section class="ui stacked segment">
+
+
+    <section id="topic" class="ui doubling twelve wide column segment">
       <h1>Serialization &amp; Test Driven Development I</h1>
-      <div class="ui  middle aligned grid">
-          <div class="row">   
-            <div class="ten column wide">
-              <h4 class="ui center aligned header">
-               Streams
-              </h4>
-              <div class="ui raised segment">
-                <p>At the heart of the JDK are object I/O and Serialization capabilities, packaged into a comprehensive library for managing the life cycle of simple objects. Although the approach taken by this particular base library has to some extent been superseded by other approaches, it remains an important and influential technical approach, that can be usefully applied in simpler standalone applications.</p>
-              </div>
-            </div>
-            <div class="six vertical column wide">
-              <a href="./pdf/a-streams.pdf"> 
-                <img class="ui medium image" src="./pdf/a-streams.jpeg"> 
-              </a>
-            </div>
-          </div>
-          <div class="row">   
-            <div class="ten column wide">
-              <h4 class="ui center aligned header">
-               TDD Introduction
-              </h4>
-              <div class="ui raised segment">
-                <p>Test Driven Development has been among the most influential approaches in recent software engineering history. Here we look at its origins, principles and some of the important benefits of the approach.</p>
-              </div>
-            </div>
-            <div class="six vertical column wide">
-              <a href="./pdf/b-tdd-intro.pdf"> 
-                <img class="ui medium image" src="./pdf/b-tdd-intro.png"> 
-              </a>
-            </div>
-          </div>
-          <div class="row">   
-            <div class="ten column wide">
-              <h4 class="ui center aligned header">
-               First Tests
-              </h4>
-              <div class="ui raised segment">
-                <p>The essential elements of TDD are fairly easy to grasp. The support libraries (xUnit) are relatively straightforward, and we can expect our IDE to provide direct assistance to using these libraries. Here we look at the facilities Eclipse provides to the JUnit library.</p>
-              </div>
-            </div>
-            <div class="six vertical column wide">
-              <a href="./pdf/c-first-tests.pdf"> 
-                <img class="ui medium image" src="./pdf/c-first-tests.jpeg"> 
-              </a>
-            </div>
-          </div>
-          <div class="row">   
-            <div class="ten column wide">
-              <h4 class="ui center aligned header">
-               Annotations
-              </h4>
-              <div class="ui raised segment">
-                <p>Earlier JUnit libraries relied on Inheritance and specific design patterns to integrate the unit tests into runnable test suites. Modern JUnit relies on Java Annotations - which simplify test structure and enable more flexible structuring of tests classes.</p>
-              </div>
-            </div>
-            <div class="six vertical column wide">
-              <a href="./pdf/d-annotations.pdf"> 
-                <img class="ui medium image" src="./pdf/d-annotations.jpeg"> 
-              </a>
-            </div>
-          </div>
-          <div class="row">   
-            <div class="ten column wide">
-             <h4 class="ui center aligned header">
-               Lab: Lab-04 
-             </h4>
-              <div class="ui raised segment">
-                <p>Equip Pacemaker with JUint libraries and then introduce a range of tests to verify essential features. Correct issues that arise as a result of the tests, becoming familiar with the fail/pass/refactor/pass cycle. Review the outstanding command set of the application.</p>
-              </div>
-            </div>
-            <div class="six column wide center aligned">
-              <a  href="./book/index.html"> 
-                  <img class="ui medium image" src="./book/img/main.jpg" alt="Lab"> 
-              </a>
-            </div>
-        </div>
-      </div>
+      <div class="ui cards">
+<div  class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./pdf/a-streams.jpeg');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./pdf/a-streams.pdf" class="header">Streams</a>
+  </div>
+  <div class="extra content">
+    <p>At the heart of the JDK are object I/O and Serialization capabilities, packaged into a comprehensive library for managing the life cycle of simple objects. Although the approach taken by this particular base library has to some extent been superseded by other approaches, it remains an important and influential technical approach, that can be usefully applied in simpler standalone applications.</p>
+  </div>
+</div><div  class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./pdf/b-tdd-intro.png');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./pdf/b-tdd-intro.pdf" class="header">TDD Introduction</a>
+  </div>
+  <div class="extra content">
+    <p>Test Driven Development has been among the most influential approaches in recent software engineering history. Here we look at its origins, principles and some of the important benefits of the approach.</p>
+  </div>
+</div><div  class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./pdf/c-first-tests.jpeg');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./pdf/c-first-tests.pdf" class="header">First Tests</a>
+  </div>
+  <div class="extra content">
+    <p>The essential elements of TDD are fairly easy to grasp. The support libraries (xUnit) are relatively straightforward, and we can expect our IDE to provide direct assistance to using these libraries. Here we look at the facilities Eclipse provides to the JUnit library.</p>
+  </div>
+</div><div  class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./pdf/d-annotations.jpeg');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./pdf/d-annotations.pdf" class="header">Annotations</a>
+  </div>
+  <div class="extra content">
+    <p>Earlier JUnit libraries relied on Inheritance and specific design patterns to integrate the unit tests into runnable test suites. Modern JUnit relies on Java Annotations - which simplify test structure and enable more flexible structuring of tests classes.</p>
+  </div>
+</div>      </div>
+      <h1> Labs </h1>
+      <div class="ui cards">
+<div class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./book/img/main.jpg');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./book/index.html" class="header">Lab: Lab-04</a>
+  </div>
+  <div class="extra content">
+    <p>Equip Pacemaker with JUint libraries and then introduce a range of tests to verify essential features. Correct issues that arise as a result of the tests, becoming familiar with the fail/pass/refactor/pass cycle. Review the outstanding command set of the application.</p>
+  </div>
+</div>      </div>
     </section>
-  </section>
-  
+  </div>
+
 </section>
   <br>  
   <div class="ui fixed bottom borderless menu">'
