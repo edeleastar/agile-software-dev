@@ -4,7 +4,7 @@
      <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
    
-     <title> Test Driven Development II </title>
+     <title> Exceptions & Maven </title>
    
      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -144,8 +144,8 @@ header h3
         <a class="item" href=" ../topic02/index.html"> The Java Programming Language </a>
         <a class="item" href=" ../topic03/index.html"> Inheritance & Collections </a>
         <a class="item" href=" ../topic04/index.html"> Serialization & Test Driven Development I </a>
-        <a class="active item" href=" ../topic05/index.html"> Test Driven Development II </a>
-        <a class="item" href=" ../topic06/index.html"> Exceptions & Maven </a>
+        <a class="item" href=" ../topic05/index.html"> Test Driven Development II </a>
+        <a class="active item" href=" ../topic06/index.html"> Exceptions & Maven </a>
           <a class="item" href=" ../topicwall.html"> All Topics </a>
           <a class="item" href=" ../labwall.html"> All Labs </a>
       </div>
@@ -155,37 +155,47 @@ header h3
 
 
     <section id="topic" class="ui doubling twelve wide column segment">
-      <h1>Test Driven Development II</h1>
+      <h1>Exceptions &amp; Maven</h1>
       <div class="ui cards">
 <div  class="ui card">
   <div class="cover">
-    <div style="background-image: url('./pdf/a-annotations.png');" class="image-thumbnail"> </div>
+    <div style="background-image: url('./pdf/a-exceptions.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./pdf/a-annotations.pdf" class="header">Annotations</a>
+    <a  href="./pdf/a-exceptions.pdf" class="header">Exceptions</a>
   </div>
   <div class="extra content">
-    <p>Earlier JUnit libraries relied on Inheritance and specific design patterns to integrate the unit tests into runnable test suites. Modern JUnit relies on Java Annotations - which simplify test structure and enable more flexible structuring of tests classes.</p>
+    <p>Dealing with unexpected events and errors is usually delegated to the Exceptions mechanism in Java. Here we review the nature of exceptions and identify some best practices when dealing with exceptions generated from libraries and frameworks.</p>
   </div>
 </div><div  class="ui card">
   <div class="cover">
-    <div style="background-image: url('./pdf/b-pragmatic-testing.png');" class="image-thumbnail"> </div>
+    <div style="background-image: url('./pdf/b-maven-introduction.gif');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./pdf/b-pragmatic-testing.pdf" class="header">Pragmatic Testing</a>
+    <a  href="./pdf/b-maven-introduction.pdf" class="header">Maven Introduction</a>
   </div>
   <div class="extra content">
-    <p>One way of becoming familiar with TDD is to explore some simple examples of various strategies that might be employed in some simple examples. Here we look at useful examples from the Pragmatic series - which laid out much of the early exploration of TDD.</p>
+    <p>Building and deploying Java applications can be a source of considerable complexity and ad-hoc procedures. Maven is a tool than aims to standardize this process, incorporating rigorous dependency management, repository structure and project layout best practices.</p>
   </div>
 </div><div  class="ui card">
   <div class="cover">
-    <div style="background-image: url('./pdf/c-pacemaker-tests.jpg');" class="image-thumbnail"> </div>
+    <div style="background-image: url('./pdf/c-maven-example.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./pdf/c-pacemaker-tests.pdf" class="header">Pacemaker Tests</a>
+    <a  href="./pdf/c-maven-example.pdf" class="header">Maven Example</a>
   </div>
   <div class="extra content">
-    <p>We try to apply some of these practices to the Pacemaker app we are building the labs. In general many of the tests are straightforward, however there are some subtleties in the serializer tests.</p>
+    <p>Using maven in practice will involve bootstrapping a project from scratch, and dealing immediately with library dependencies. For well known libraries this will be straightforward. For obscure or abandoned libraries, we need to take some additional steps.</p>
+  </div>
+</div><div  class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./pdf/d-assessment-rubric.png');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./pdf/d-assessment-rubric.pdf" class="header">Assessment Rubric</a>
+  </div>
+  <div class="extra content">
+    <p>A tour of how assessment 1 will be graded</p>
   </div>
 </div>      </div>
       <h1> Labs </h1>
@@ -195,14 +205,10 @@ header h3
     <div style="background-image: url('./book/img/main.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./book/index.html" class="header">Lab: Lab-05</a>
+    <a  href="./book/index.html" class="header">Lab: Lab-06</a>
   </div>
   <div class="extra content">
-    <ul>
-<li>Create a new project to host a version of pacemaker implemented in Xtend</li>
-<li>Build the project + its unit tests</li>
-<li>Explore the generated Java sources</li>
-</ul>
+    <p>Install and configure maven and then create and and test a single module maven project with several external dependencies. Once this is working, incorporate into Eclipse.</p>
   </div>
 </div>      </div>
     </section>
