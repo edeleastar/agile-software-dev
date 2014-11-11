@@ -1,0 +1,396 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+   
+     <title> Lab-07 </title>
+   
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="http://beta.semantic-ui.com/dist/semantic.min.css">
+     <script src="http://beta.semantic-ui.com/javascript/library/jquery.min.js"></script>
+     <script src="http://beta.semantic-ui.com/dist/semantic.min.js"></script>
+
+     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" /> 
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+    <style>
+
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+#container
+{
+  margin :10px
+}
+
+code
+{
+	font-family: "Monaco";
+	font-size: 110%;
+}
+
+h1 
+{
+  font-style:italic;
+  font-size:120%;
+  border-bottom: thin solid black;
+}
+h2 
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3 
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+#footertext 
+{
+  font-size:70%
+}
+
+#title 
+{
+  font-size:120%;
+  color: black;
+  text-align: right;
+  background-color : white;
+}
+
+img 
+{
+   padding:1px;
+   border:1px solid black;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+header img
+{
+	 padding:1px;
+   border:0px solid black;
+}
+
+header h1
+{
+  font-style:normal;
+  font-size:120%;
+  border-bottom: 0px;
+}
+
+header h2
+{
+  font-style:normal;
+  font-size:100%;
+  border-bottom: 0px;
+}
+
+header h3
+{
+  font-style:normal;
+  font-size:90%;
+  border-bottom: 0px;
+}
+
+.cover
+{
+    width: 290px;
+    height: 290px;
+    border:1px solid lightgray;
+}
+.image-thumbnail
+{
+    height: 100%;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center;
+}
+
+
+
+    </style>
+
+  </head>
+  <body>
+  <nav class="ui fixed top pointing borderless inverted menu">
+    <header class="header item"> <a href="../index.html">Pacemaker 1.0 in Xtend</a></header>
+    <div class="right tab-menu menu">
+          <a class="item" data-tab="Lab-07"> Lab-07 </a>
+          <a class="item" data-tab="01"> 01 </a>
+          <a class="item" data-tab="02"> 02 </a>
+          <a class="item" data-tab="03"> 03 </a>
+          <a class="item" data-tab="04"> 04 </a>
+          <a class="item" data-tab="05"> 05 </a>
+          <a class="item" data-tab="Exercises"> Exercises </a>
+    </div>
+  </nav>
+
+  <br>
+
+	  <section data-tab="Lab-07" class="ui tab stacked moodle-book segment">
+	     <h1>Objectives</h1>
+<p>Build pacemaker-1.0 from source using maven. Reverse engineer to UML and Structure 101. Uses these modeling tools on your own assignment</p>
+	  </section>
+	  <section data-tab="01" class="ui tab stacked moodle-book segment">
+	     <h1>Solution Project</h1>
+<p>The solution will require maven to be installed on your computer.</p>
+<ul>
+<li><a href="http://maven.apache.org/">http://maven.apache.org/</a></li>
+</ul>
+<p>Download and install the latest version if you havent done so already. Make sure it on your command line path, such that when you type:</p>
+<pre><code>mvn
+</code></pre>
+
+<p>you might get something like this:</p>
+<pre><code>pache Maven 3.0.3 (r1075438; 2011-02-28 17:31:09+0000)
+Maven home: /Users/edeleastar/dev/bin/apache-maven-3.0.3
+Java version: 1.6.0_51, vendor: Apple Inc.
+Java home: /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+Default locale: en_US, platform encoding: MacRoman
+OS name: &quot;mac os x&quot;, version: &quot;10.8.4&quot;, arch: &quot;x86_64&quot;, family: &quot;mac&quot;
+grendel3:prj edeleastar$
+</code></pre>
+
+<p>This is the solution project here:</p>
+<ul>
+<li><a href="archives/pacemaker-console-xtend.zip">pacemaker-console-xtend.zip</a></li>
+</ul>
+<p>Download and unarchive.</p>
+<p>It is a maven project, which includes these dependencies:</p>
+<pre><code class="xml">    &lt;dependencies&gt;
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.eclipse.xtend&lt;/groupId&gt;
+      &lt;artifactId&gt;org.eclipse.xtend.lib&lt;/artifactId&gt;
+      &lt;version&gt;${xtend.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.11&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.google.guava&lt;/groupId&gt;
+      &lt;artifactId&gt;guava&lt;/artifactId&gt;
+      &lt;version&gt;15.0&lt;/version&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.thoughtworks.xstream&lt;/groupId&gt;
+      &lt;artifactId&gt;xstream&lt;/artifactId&gt;
+      &lt;version&gt;1.4.4&lt;/version&gt;
+    &lt;/dependency&gt;    
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.codehaus.jettison&lt;/groupId&gt;
+      &lt;artifactId&gt;jettison&lt;/artifactId&gt;
+      &lt;version&gt;1.3.4&lt;/version&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;asg-cliche&lt;/groupId&gt;
+      &lt;artifactId&gt;asg-cliche&lt;/artifactId&gt;
+      &lt;version&gt;1.0&lt;/version&gt;
+    &lt;/dependency&gt;       
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;btc-ascii-table&lt;/groupId&gt;
+      &lt;artifactId&gt;btc-ascii-table&lt;/artifactId&gt;
+      &lt;version&gt;1.0&lt;/version&gt;
+    &lt;/dependency&gt; 
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.codehaus.jackson&lt;/groupId&gt;
+      &lt;artifactId&gt;jackson-core-asl&lt;/artifactId&gt;
+      &lt;version&gt;1.9.13&lt;/version&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+      &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+      &lt;version&gt;2.2.3&lt;/version&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;joda-time&lt;/groupId&gt;
+      &lt;artifactId&gt;joda-time&lt;/artifactId&gt;
+      &lt;version&gt;2.3&lt;/version&gt;
+    &lt;/dependency&gt;
+
+    &lt;/dependencies&gt;
+</code></pre>
+
+<p>Two of these dependencies are not in the public maven repositories:</p>
+<ul>
+<li><a href="archives/asg-cliche-1.0.jar">asg-cliche-1.0.jar</a></li>
+<li><a href="archives/btc-ascii-table-1.0.jar">btc-ascii-table-1.0.jar</a></li>
+</ul>
+<p>Download these, and install them using the following maven commands:</p>
+<pre><code>mvn install:install-file -Dfile=btc-ascii-table-1.0.jar -DgroupId=btc-ascii-table -DartifactId=btc-ascii-table -Dversion=1.0 -Dpackaging=jar
+</code></pre>
+
+<pre><code>mvn install:install-file -Dfile=asg-cliche-1.0.jar -DgroupId=asg-cliche -DartifactId=asg-cliche -Dversion=1.0 -Dpackaging=jar
+</code></pre>
+
+<p>The project should build now. Try the following commands:</p>
+<pre><code>mvn compile
+mvn test
+mvn package
+mvn eclipse:eclipse
+</code></pre>
+
+<p>After the latter, the project can be imported into eclipse:</p>
+<p><img alt="" src="img/01.png"></p>
+<p>From there you should be able to execute it, and also run all tests.</p>
+	  </section>
+	  <section data-tab="02" class="ui tab stacked moodle-book segment">
+	     <h1>Install Visual Paradigm</h1>
+<p>To reverse engineer your code to UML, you will need Visual Paradigm Standard Edition:</p>
+<ul>
+<li><a href="http://www.visual-paradigm.com/product/?favor=vpuml">http://www.visual-paradigm.com/product/?favor=vpuml</a></li>
+</ul>
+<p>You will need this key here to enable the full standard edition features:</p>
+<ul>
+<li>Visual Paradigm Standard edition 11.2 U8XHD-LE49E-765X4-B5HGU-2R7RS</li>
+</ul>
+<p>This is an 'Acadedmic License' - so enter it in the appropriate field.</p>
+<p>In order to avoid excessive information in the UML diagrams, customise the defaults as follows:</p>
+<h2>Shape</h2>
+<p>Select <code>Tools-&gt;Project Options-&gt;Diagramming-&gt;Shape</code> to look like this:</p>
+<p><img alt="" src="img/02.png"></p>
+<h2>Shape</h2>
+<p>Select <code>Tools-&gt;Project Options-&gt;Shape</code> to look like this:</p>
+<p><img alt="" src="img/03.png"></p>
+	  </section>
+	  <section data-tab="03" class="ui tab stacked moodle-book segment">
+	     <h1>Reverse Engineer Class Diagram</h1>
+<p>Select `Tools-&gt;Code Engineering-&gt;Instant Reverse-&gt;Java'</p>
+<p><img alt="" src="img/04.png"></p>
+<p>Press 'Add Source Folder' and select the 'xtend' from 'src/main/generated-sources' in the maven project as shown here:</p>
+<p><img alt="" src="img/05.png"></p>
+<p>Press finish - and Visual Paradigm should ingest the sources presenting you with a 'model' view:</p>
+<p><img alt="" src="img/06.png"></p>
+<p>Right click on a package - say models - and select 'Reverse To-&gt;New Class Diagram'</p>
+<p><img alt="" src="img/07.png"></p>
+<p>Which should produce this:</p>
+<p><img alt="" src="img/08.png"></p>
+<p>Name the package 'models' by directly typing in the top left of the canvas:</p>
+<p><img alt="" src="img/09.png"></p>
+<p>Reverse each of the other packages, and we should see something like this for each one (rename the packages as you go along)</p>
+<p><img alt="" src="img/10.png"></p>
+<p><img alt="" src="img/11.png"></p>
+<p><img alt="" src="img/12.png"></p>
+<p>Become familiar with the 'Diagram' view as well as the 'Model' view you have been using so far.</p>
+<p>Most of the reverse engineering went as expected - representing key aspects of the model reasonable accurately. However, there are some deficiencies in the 'model' package - see if you can fix these now such that the model looks like this:</p>
+<p><img alt="" src="img/12a.png"></p>
+	  </section>
+	  <section data-tab="04" class="ui tab stacked moodle-book segment">
+	     <h1>Reverse Engineer Sequence Diagrams</h1>
+<p>We can also reverse 'Sequence Diagrams' from the source, which yield a more dynamic view of the application.</p>
+<p>In the Model view, select PacemakerService-&gt;createActivity and select 'Reverse To-&gt;Sequence Diagram':</p>
+<p><img alt="" src="img/15.png"></p>
+<p>This should yield this sequence diagram:</p>
+<p><img alt="" src="img/16.png"></p>
+<p>Here is a reverse of the createUser method in the same class:</p>
+<p><img alt="" src="img/17.png"></p>
+<p>Experiment with a few of the other methods.</p>
+<p>NB: Reverse engineering the PacemakerShell class seems to be a bridge too far for Visual Paradigm, and seems to cause a freeze in the app. </p>
+	  </section>
+	  <section data-tab="05" class="ui tab stacked moodle-book segment">
+	     <h1>Structure 101 Analysis</h1>
+<p>Visit the produce page for HradWay Software:</p>
+<ul>
+<li><a href="http://structure101.com">http://structure101.com</a></li>
+</ul>
+<p>and download then Structure 101 product</p>
+<ul>
+<li><a href="http://structure101.com/downloads/">http://structure101.com/downloads/</a></li>
+</ul>
+<p>You will need to register - and receive an activation key by email.</p>
+<p>Reverse engineer the sample solution using the 101 tool. You will have seen the screen shots in the lecture of a 101 reverse of the project. User guides here:</p>
+<ul>
+<li><a href="http://structure101.com/resources/#resources=0">http://structure101.com/resources/#resources=0</a></li>
+</ul>
+<p>Which should enable you to reproduce exactly the diagrams reviewed in the lecture.</p>
+	  </section>
+	  <section data-tab="Exercises" class="ui tab stacked moodle-book segment">
+	     <h1>Exercises</h1>
+<p>If you used java or a java derived language, you should be in a position to reverse engineer your solution using:</p>
+<ul>
+<li>Visual Paradigm for UML</li>
+<li>Structure 101</li>
+</ul>
+<p>as reviewed in this lab. Do this now.</p>
+<p>For Python and Objective-C, both Visual paradigm and Structure 101 seem to have support for these languages, in structure 101's case, this is via third party plugins.</p>
+<p>In Visual Paradigm, these are available via the 'Tools-&gt;Code Engineering-&gt;Instant Reverse' menu. With Structure 101, you will need to install the Structure101g variant of the product, and fetch the plugins via the Flavors/Install menu.</p>
+<h2>Reverse Engineer of pacemaker-console-xtend</h2>
+<p>This is a Visual Paradigm reverse of the solution:</p>
+<ul>
+<li><a href="archives/pacemaker-v1.vpp">pacemaker-v1.vpp</a></li>
+</ul>
+	  </section>
+<script>
+
+function addCaptions() {
+  var images = $(".moodle-book img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0) 
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+};
+
+// Need to check if we have already been loaded
+seen = 0;
+
+$(document).ready(function()
+{ 
+  if (seen == 0)
+  { 
+    // not loaded before - so do the restyling once (need to moodle book print)
+    $(".moodle-book img").addClass ("ui image");
+    $(".moodle-book pre").addClass ("ui segment");
+    addCaptions();
+    seen = 1;
+  }
+
+
+})</script>
+  <br>  
+  <div class="ui fixed bottom borderless menu">'
+    <div class="ui small item"> 
+    <p id="footertext">
+    Prepared by  Eamonn de Leastar (edeleastar@wit.ie). Except where otherwise noted, this content is licensed under a  
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/" 
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>   
+    
+  <script>
+    $(document).ready(function()
+    {  
+      $('.tab-menu.menu .item').tab();
+    });
+  </script>   
+  </body>
+ </html>
