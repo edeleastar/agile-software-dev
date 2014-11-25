@@ -4,7 +4,7 @@
      <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
    
-     <title> Inheritance & Collections </title>
+     <title> Test Driven Development III </title>
    
      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -142,13 +142,13 @@ header h3
       <div class="menu">
         <a class="item" href=" ../topic01/index.html"> Paradigms & Languages </a>
         <a class="item" href=" ../topic02/index.html"> The Java Programming Language </a>
-        <a class="active item" href=" ../topic03/index.html"> Inheritance & Collections </a>
+        <a class="item" href=" ../topic03/index.html"> Inheritance & Collections </a>
         <a class="item" href=" ../topic04/index.html"> Serialization & Test Driven Development I </a>
         <a class="item" href=" ../topic05/index.html"> Test Driven Development II </a>
         <a class="item" href=" ../topic06/index.html"> Exceptions & Maven </a>
         <a class="item" href=" ../topic07/index.html"> Pacemaker 1.0 in Xtend </a>
         <a class="item" href=" ../topic08/index.html"> SRP </a>
-        <a class="item" href=" ../topic09/index.html"> Test Driven Development III </a>
+        <a class="active item" href=" ../topic09/index.html"> Test Driven Development III </a>
           <a class="item" href=" ../topicwall.html"> All Topics </a>
           <a class="item" href=" ../labwall.html"> All Labs </a>
       </div>
@@ -158,40 +158,70 @@ header h3
 
 
     <section id="topic" class="ui doubling twelve wide column segment">
-      <h1>Inheritance &amp; Collections</h1>
+      <h1>Test Driven Development III</h1>
       <div class="ui cards">
 <div  class="ui card">
   <div class="cover">
-    <div style="background-image: url('./pdf/a-inheritance.jpg');" class="image-thumbnail"> </div>
+    <div style="background-image: url('./pdf/a-writing-tests.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./pdf/a-inheritance.pdf" class="header">Inheritance</a>
+    <a  href="./pdf/a-writing-tests.pdf" class="header">Writing Tests</a>
   </div>
   <div class="extra content">
-    <p>Object Oriented thinking has consistently placed the inheritance relationship as a key feature of its approach. We review how this relationship is realized in Java. As you will see it is a complex relationship, and we will return to the difficulties it can cause in a later topic.</p>
+    <p>A review of the basic structure of JUnit based tests, elaborating on the primary assert calls and annotations.</p>
   </div>
 </div><div  class="ui card">
   <div class="cover">
-    <div style="background-image: url('./pdf/b-collections.jpg');" class="image-thumbnail"> </div>
+    <div style="background-image: url('./pdf/b-bicep.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./pdf/b-collections.pdf" class="header">Collections</a>
+    <a  href="./pdf/b-bicep.pdf" class="header">Right BICEP</a>
   </div>
   <div class="extra content">
-    <p>All programming languages will have support for a range of common data structures. Unlike typical dynamic programming language, collections are implemented as a standard library in Java (as opposed to being built in). We will survey the major features of this library, focusing on the principle interfaces and implementations. There is considerable more to collections, which should be investigated independently.</p>
+    <p>Guidelines for Composing Tests phrased using the acronym: - Right, Boundary, Inverse, Cross-check, Errors &amp; Performance.</p>
+  </div>
+</div><div  class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./pdf/c-correct.png');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./pdf/c-correct.pdf" class="header">C.O.R.R.E.C.T</a>
+  </div>
+  <div class="extra content">
+    <p>More guidelines - this time the acronym is Conformance, Ordering, Range, Reference, Existing, Cardinality, Time.</p>
+  </div>
+</div><div  class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./pdf/d-play-evolutions.png');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./pdf/d-play-evolutions.pdf" class="header">Database Evolutions</a>
+  </div>
+  <div class="extra content">
+    <p>If you are using the Play Framework - and any Relational Database - then database evolution will be a central concern and a key source of misconfiguration errors.</p>
+  </div>
+</div><div  class="ui card">
+  <div class="cover">
+    <div style="background-image: url('./pdf/e-testing-pacemakerplay.png');" class="image-thumbnail"> </div>
+  </div>
+  <div class="content">
+    <a  href="./pdf/e-testing-pacemakerplay.pdf" class="header">Testing Pacemaker 2.0</a>
+  </div>
+  <div class="extra content">
+    <p>Pacemaker 2.0 is a REST service, which we can test using REST clients.</p>
   </div>
 </div>      </div>
       <h1> Labs </h1>
       <div class="ui cards">
 <div class="ui card">
   <div class="cover">
-    <div style="background-image: url('./book/img/main.jpg');" class="image-thumbnail"> </div>
+    <div style="background-image: url('./book/img/main.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./book/index.html" class="header">Lab: Lab-03</a>
+    <a  href="./book/index.html" class="header">Lab: Lab-09</a>
   </div>
   <div class="extra content">
-    <p>Extend the pacemaker application to include Activity and Location classes + associated commands. Once these are in place, incorporate a serialization mechanism to enable users &amp; activities to be persisted to a file. We will then try to generalize this mechanism, which will enable us to experiment with alternative serialization formats.</p>
+    <p>Explore Database evolutions in Play. Build a test project, that communicates with the play service over http. Write some initial tests to verify the User class features</p>
   </div>
 </div>      </div>
     </section>
