@@ -4,7 +4,7 @@
      <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
    
-     <title> Test Driven Development III </title>
+     <title> OCP </title>
    
      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -148,8 +148,8 @@ header h3
         <a class="item" href=" ../topic06/index.html"> Exceptions & Maven </a>
         <a class="item" href=" ../topic07/index.html"> Pacemaker 1.0 in Xtend </a>
         <a class="item" href=" ../topic08/index.html"> SRP </a>
-        <a class="active item" href=" ../topic09/index.html"> Test Driven Development III </a>
-        <a class="item" href=" ../topic10/index.html"> OCP </a>
+        <a class="item" href=" ../topic09/index.html"> Test Driven Development III </a>
+        <a class="active item" href=" ../topic10/index.html"> OCP </a>
           <a class="item" href=" ../topicwall.html"> All Topics </a>
           <a class="item" href=" ../labwall.html"> All Labs </a>
       </div>
@@ -159,57 +159,27 @@ header h3
 
 
     <section id="topic" class="ui doubling twelve wide column segment">
-      <h1>Test Driven Development III</h1>
+      <h1>OCP</h1>
       <div class="ui cards">
 <div  class="ui card">
   <div class="cover">
-    <div style="background-image: url('./pdf/a-writing-tests.png');" class="image-thumbnail"> </div>
+    <div style="background-image: url('./pdf/a-open-closed-principle.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./pdf/a-writing-tests.pdf" class="header">Writing Tests</a>
+    <a  href="./pdf/a-open-closed-principle.pdf" class="header">Open Closed Principle</a>
   </div>
   <div class="extra content">
-    <p>A review of the basic structure of JUnit based tests, elaborating on the primary assert calls and annotations.</p>
+    <p>THe second of the "SOLID" principles: "Software Entities should be open for extension but closed for modification"</p>
   </div>
 </div><div  class="ui card">
   <div class="cover">
-    <div style="background-image: url('./pdf/b-bicep.png');" class="image-thumbnail"> </div>
+    <div style="background-image: url('./pdf/b-pacemaker-v2.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./pdf/b-bicep.pdf" class="header">Right BICEP</a>
+    <a  href="./pdf/b-pacemaker-v2.pdf" class="header">Pacemaker V2</a>
   </div>
   <div class="extra content">
-    <p>Guidelines for Composing Tests phrased using the acronym: - Right, Boundary, Inverse, Cross-check, Errors &amp; Performance.</p>
-  </div>
-</div><div  class="ui card">
-  <div class="cover">
-    <div style="background-image: url('./pdf/c-correct.png');" class="image-thumbnail"> </div>
-  </div>
-  <div class="content">
-    <a  href="./pdf/c-correct.pdf" class="header">C.O.R.R.E.C.T</a>
-  </div>
-  <div class="extra content">
-    <p>More guidelines - this time the acronym is Conformance, Ordering, Range, Reference, Existing, Cardinality, Time.</p>
-  </div>
-</div><div  class="ui card">
-  <div class="cover">
-    <div style="background-image: url('./pdf/d-play-evolutions.png');" class="image-thumbnail"> </div>
-  </div>
-  <div class="content">
-    <a  href="./pdf/d-play-evolutions.pdf" class="header">Database Evolutions</a>
-  </div>
-  <div class="extra content">
-    <p>If you are using the Play Framework - and any Relational Database - then database evolution will be a central concern and a key source of misconfiguration errors.</p>
-  </div>
-</div><div  class="ui card">
-  <div class="cover">
-    <div style="background-image: url('./pdf/e-testing-pacemakerplay.png');" class="image-thumbnail"> </div>
-  </div>
-  <div class="content">
-    <a  href="./pdf/e-testing-pacemakerplay.pdf" class="header">Testing Pacemaker 2.0</a>
-  </div>
-  <div class="extra content">
-    <p>Pacemaker 2.0 is a REST service, which we can test using REST clients.</p>
+    <p>Extend Pacemaker to include Activities &amp; Locations. Review the design and implementation in UML + examine the new tests.</p>
   </div>
 </div>      </div>
       <h1> Labs </h1>
@@ -219,10 +189,10 @@ header h3
     <div style="background-image: url('./book/img/main.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./book/index.html" class="header">Lab: Lab-09</a>
+    <a  href="./book/index.html" class="header">Lab: Lab-10</a>
   </div>
   <div class="extra content">
-    <p>Explore Database evolutions in Play. Build a test project, that communicates with the play service over http. Write some initial tests to verify the User class features</p>
+    <p>Incorporate Activity class into the placemaker service. Extend pacemakerplaytest to exercise the new feature. Using this as a role model, in the exercises introduce Location into the service</p>
   </div>
 </div>      </div>
     </section>
