@@ -4,7 +4,7 @@
      <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
    
-     <title> The Java Programming Language </title>
+     <title> Test Doubles </title>
    
      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -141,7 +141,7 @@ header h3
     <nav class="ui vertical fluid pointing menu">
       <div class="menu">
         <a class="item" href=" ../topic01/index.html"> Paradigms & Languages </a>
-        <a class="active item" href=" ../topic02/index.html"> The Java Programming Language </a>
+        <a class="item" href=" ../topic02/index.html"> The Java Programming Language </a>
         <a class="item" href=" ../topic03/index.html"> Inheritance & Collections </a>
         <a class="item" href=" ../topic04/index.html"> Serialization & Test Driven Development I </a>
         <a class="item" href=" ../topic05/index.html"> Test Driven Development II </a>
@@ -150,7 +150,7 @@ header h3
         <a class="item" href=" ../topic08/index.html"> SRP </a>
         <a class="item" href=" ../topic09/index.html"> Test Driven Development III </a>
         <a class="item" href=" ../topic10/index.html"> OCP </a>
-        <a class="item" href=" ../topic11/index.html"> Test Doubles </a>
+        <a class="active item" href=" ../topic11/index.html"> Test Doubles </a>
         <a class="item" href=" ../topic12/index.html"> LSP + Play </a>
           <a class="item" href=" ../topicwall.html"> All Topics </a>
           <a class="item" href=" ../labwall.html"> All Labs </a>
@@ -161,70 +161,53 @@ header h3
 
 
     <section id="topic" class="ui doubling twelve wide column segment">
-      <h1>The Java Programming Language</h1>
+      <h1>Test Doubles</h1>
       <div class="ui cards">
 <div  class="ui card">
   <div class="cover">
-    <div style="background-image: url('./pdf/a-java-overview.png');" class="image-thumbnail"> </div>
+    <div style="background-image: url('./pdf/a-xunit-patterns.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./pdf/a-java-overview.pdf" class="header">Introduction</a>
+    <a  href="./pdf/a-xunit-patterns.pdf" class="header">XUnit Patterns</a>
   </div>
   <div class="extra content">
-    <p>The java programming language is a mature, well understood language that powers many enterprises and public web applications. Originally design for the consumer electronics market, it was quickly adopted as general purpose, versatile language relatively easy to learn and master.</p>
+    <p>TDD is a rich and mature field, with its own literature and best practices. Here we review an attempt to capture some of this best practice into a set of higher level patterns.</p>
   </div>
 </div><div  class="ui card">
   <div class="cover">
-    <div style="background-image: url('./pdf/b-classes.jpeg');" class="image-thumbnail"> </div>
+    <div style="background-image: url('./pdf/b-test-double.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./pdf/b-classes.pdf" class="header">Classes</a>
+    <a  href="./pdf/b-test-double.pdf" class="header">Test Doubles</a>
   </div>
   <div class="extra content">
-    <p>Classes are the fundamental abstraction in the language. Understanding their structure, layout and semantics is essential. In particular a clear understanding of the difference between static and regular attributes &amp; methods + the role of the Object pseudo class is essential.</p>
+    <p>One of these patters in the 'Test Double' - also called 'Mock Objects'. </p>
   </div>
 </div><div  class="ui card">
   <div class="cover">
-    <div style="background-image: url('./pdf/c-control-statements.jpeg');" class="image-thumbnail"> </div>
+    <div style="background-image: url('./pdf/c-mocking-in-pacemaker.png');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./pdf/c-control-statements.pdf" class="header">Control Statements</a>
+    <a  href="./pdf/c-mocking-in-pacemaker.pdf" class="header">Mocking in Pacemaker 2.0</a>
   </div>
   <div class="extra content">
-    <p>The set of control statements are largely inherited from C and C++. There are small number of these and their structure and behaviour is largely unsurprising.</p>
-  </div>
-</div><div  class="ui card">
-  <div class="cover">
-    <div style="background-image: url('./pdf/d-object-oriented-concepts.gif');" class="image-thumbnail"> </div>
-  </div>
-  <div class="content">
-    <a  href="./pdf/d-object-oriented-concepts.pdf" class="header">Object Oriented Concepts</a>
-  </div>
-  <div class="extra content">
-    <p>Behind the language are a set of well-understood principles. These principles are independent of Java, but underpin its structure and meaning. Understanding these principles is important and is a useful starting point for comparing Java and the features of other programming languages.</p>
-  </div>
-</div><div  class="ui card">
-  <div class="cover">
-    <div style="background-image: url('./pdf/e-assignment.jpeg');" class="image-thumbnail"> </div>
-  </div>
-  <div class="content">
-    <a  href="./pdf/e-assignment.pdf" class="header">Assignment 1</a>
-  </div>
-  <div class="extra content">
-    <p>This is your first assignment. It is a java console application, whose specification is presented here. A useful working pattern over the next few weeks would be to complete each lab, and and then evaluate the specification (and the project of the lab) and see where you need to go with it.</p>
+    <p>An exploration of potential opportunities for Mocking in Pacemaker 2.0. These could include a social subsystem, which could be concieved as an independent system, mocked out in advance of its development.</p>
   </div>
 </div>      </div>
       <h1> Labs </h1>
       <div class="ui cards">
 <div class="ui card">
   <div class="cover">
-    <div style="background-image: url('./book/img/main.jpg');" class="image-thumbnail"> </div>
+    <div style="background-image: url('None');" class="image-thumbnail"> </div>
   </div>
   <div class="content">
-    <a  href="./book/index.html" class="header">Lab: Lab-02</a>
+    <a  href="./book/index.html" class="header">Lab: Lab-11</a>
   </div>
   <div class="extra content">
-    <p>Evolve the application developed in lab01 into a simple command line app. Incorporate commands for creating, deleting and listing users. Explore List, ArrayList, Map, HashMap in this context and introduce the guava and cliche libraries.</p>
+    <ul>
+<li>Introduce elements of a web UI onto the pacemaker</li>
+<li>Rework (in the final archive) the ui into a simple app</li>
+</ul>
   </div>
 </div>      </div>
     </section>
