@@ -7,11 +7,12 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
 
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
@@ -45,7 +46,7 @@ figcaption
 
   <body>
 
-    <div class="container">
+  <div class="ui container">
 <style>
 
 
@@ -80,43 +81,58 @@ h3
 
 </style>
 
-<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
-      <div class="navbar-brand">
-        <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
-        SRP
-      </div>
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      SRP
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-08">
+        Lab-08
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+      <a class="item" data-tab="05">
+        05
+      </a>
+      <a class="item" data-tab="06">
+        06
+      </a>
+      <a class="item" data-tab="07">
+        07
+      </a>
+      <a class="item" data-tab="08">
+        08
+      </a>
+      <a class="item" data-tab="09">
+        09
+      </a>
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href= "#Lab-08" data-toggle="tab"> Lab-08 </a> </li>
-          <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
-          <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
-          <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
-          <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
-          <li><a href= "#05" data-toggle="tab"> 05 </a> </li>
-          <li><a href= "#06" data-toggle="tab"> 06 </a> </li>
-          <li><a href= "#07" data-toggle="tab"> 07 </a> </li>
-          <li><a href= "#08" data-toggle="tab"> 08 </a> </li>
-          <li><a href= "#09" data-toggle="tab"> 09 </a> </li>
-          <li><a href= "#Exercises" data-toggle="tab"> Exercises </a> </li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <br><br>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="Lab-08">
+  <div  class="ui tab segment lab" data-tab="Lab-08">
     <h1>Objectives</h1>
 <p>Create a new version of pacemaker using the play framework and deploy this to a cloud provided. Perform some simple tests on the local and hosted version</p>
   </div>
-
-    <div class="tab-pane fade" id="01">
-      <h1>Install Play</h1>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Install Play</h1>
 <p>Download and install the latest version of the Play Framework (currently 2.2.1)</p>
 <ul>
 <li><a href="http://www.playframework.com">http://www.playframework.com</a></li>
@@ -206,9 +222,9 @@ play 2.2.1 built with Scala 2.10.2 (running Java 1.7.0_40), http://www.playframe
 <li><a href="http://localhost:9000">http://localhost:9000</a></li>
 </ul>
 <p>It should display a standard greeting page.</p>
-    </div>
-    <div class="tab-pane fade" id="02">
-      <h1>User Model</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>User Model</h1>
 <p>Create a new package in <code>app</code> called 'models'. Introduce this class into this package:</p>
 <pre><code class="java">package models;
 
@@ -304,9 +320,9 @@ public class User extends Model
   public static Model.Finder&lt;String, User&gt; find = new Model.Finder&lt;String, User&gt;(String.class, User.class);
 }
 </code></pre>
-    </div>
-    <div class="tab-pane fade" id="03">
-      <h1>Parsers</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>Parsers</h1>
 <p>Open  <code>build.sbt</code> in the project, and add on a requirement for a new libary (flexjson)</p>
 <pre><code>name := &quot;pacemakerplay&quot;
 
@@ -357,9 +373,9 @@ public class JsonParser
 <li><a href="http://localhost:9000">http://localhost:9000</a></li>
 </ul>
 <p>The same greeting page should be displayed.</p>
-    </div>
-    <div class="tab-pane fade" id="04">
-      <h1>Controller</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>Controller</h1>
 <p>There is already a package called 'controllers'. Create a new class in this package:</p>
 <pre><code class="java">package controllers;
 
@@ -427,9 +443,9 @@ public class PacemakerAPI extends Controller
 </code></pre>
 
 <p>The project should continue to be without errors.</p>
-    </div>
-    <div class="tab-pane fade" id="05">
-      <h1>Routes</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="05">
+    <h1>Routes</h1>
 <p>Open the file <code>conf/routes</code> in eclipse, and introduce the following entries (immediately below 'GET /')</p>
 <pre><code>GET     /api/users                            controllers.PacemakerAPI.users()
 DELETE  /api/users                            controllers.PacemakerAPI.deleteAllUsers()
@@ -474,9 +490,9 @@ run
 <ul>
 <li><a href="archives/pacemakerplay.zip">pacemakerplay.zip</a></li>
 </ul>
-    </div>
-    <div class="tab-pane fade" id="06">
-      <h1>Testing</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="06">
+    <h1>Testing</h1>
 <p>Make sure the app is running, and browse to :</p>
 <ul>
 <li><a href="http://localhost:9000/api/users">http://localhost:9000/api/users</a></li>
@@ -511,9 +527,9 @@ run
 <li>Update (via a PUT) request.</li>
 </ul>
 <p>Also, examine the database via the h2-console, and see if you can verify if the 'my_users' table is being updated.</p>
-    </div>
-    <div class="tab-pane fade" id="07">
-      <h1>Deployment</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="07">
+    <h1>Deployment</h1>
 <p>Create a free account on heroku:</p>
 <ul>
 <li><a href="http://www.heroku.com">http://www.heroku.com</a></li>
@@ -623,9 +639,9 @@ To git@heroku.com:polar-basin-1694.git
 <ul>
 <li><a href="https://postgres.heroku.com/databases">https://postgres.heroku.com/databases</a></li>
 </ul>
-    </div>
-    <div class="tab-pane fade" id="08">
-      <h1>Test</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="08">
+    <h1>Test</h1>
 <p>The h2 browser is not usable on the heroku infrastructure (is it postgress after all), so we should switch to postgress</p>
 <p>Install a suitable version of pgadmin for your system:</p>
 <ul>
@@ -644,9 +660,9 @@ To git@heroku.com:polar-basin-1694.git
 <p>It can be difficult to locate your database - but it is in there somewhere:</p>
 <p><img alt="" src="img/09.png"></p>
 <p><img alt="" src="img/10.png"></p>
-    </div>
-    <div class="tab-pane fade" id="09">
-      <h1>Connecting Local App to Remote Database</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="09">
+    <h1>Connecting Local App to Remote Database</h1>
 <p>Our local application and our remote version are configured to use different databases. These configurations are visible in application.conf:</p>
 <pre><code>db.default.driver=org.postgresql.Driver
 db.default.url=${DATABASE_URL}
@@ -707,9 +723,9 @@ db.default.url=&quot;jdbc:postgresql://ec2-54-227-242-149.compute-1.amazonaws.co
 <ul>
 <li><a href="http://stackoverflow.com/questions/12195568/errors-in-evolutions-on-heroku">http://stackoverflow.com/questions/12195568/errors-in-evolutions-on-heroku</a></li>
 </ul>
-    </div>
-    <div class="tab-pane fade" id="Exercises">
-      <h1>Exercises</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="Exercises">
+    <h1>Exercises</h1>
 <p>Archive of the project so far (withoout heroku settings):</p>
 <ul>
 <li><a href="archives/pacemakerplay.zip">pacemakerplay.zip</a></li>
@@ -732,31 +748,45 @@ db.default.url=&quot;jdbc:postgresql://ec2-54-227-242-149.compute-1.amazonaws.co
 </code></pre>
 
 <p>The last command provides a way of resetting (deleting) the schema for the database. See if you can use the command to delete the database, and then re-deploy the application.</p>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
+
+
+
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Eamonn de Leastar (edeleastar@wit.ie). Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
     </div>
-</div>
-<br> <br>
-
-
-    </div>
-
-
-<div class="credits navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <small>
-    Prepared by Eamonn de Leastar (edeleastar@wit.ie). Except where otherwise noted, this content is licensed under a
-    <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-        target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-    </a>
-    </small>
-</div>    <script>
+  </div>    <script>
 
 $(document).ready(function()
 {
-  $("img").addClass ("img-responsive");
+  $("img").addClass ("ui image");
 
-  $(".tab-content img").each(function()
-  {
-    var title = this.alt;
-    $(this).after('<figcaption class="caption"> <em>'+ title +'</em></figcaption>');
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
   });
 })    </script>
 

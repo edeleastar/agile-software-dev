@@ -7,11 +7,12 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
 
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
@@ -45,7 +46,7 @@ figcaption
 
   <body>
 
-    <div class="container">
+  <div class="ui container">
 <style>
 
 
@@ -80,43 +81,58 @@ h3
 
 </style>
 
-<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
-      <div class="navbar-brand">
-        <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
-        Paradigms & Languages
-      </div>
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Paradigms & Languages
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-01">
+        Lab-01
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+      <a class="item" data-tab="05">
+        05
+      </a>
+      <a class="item" data-tab="06">
+        06
+      </a>
+      <a class="item" data-tab="07">
+        07
+      </a>
+      <a class="item" data-tab="08">
+        08
+      </a>
+      <a class="item" data-tab="09">
+        09
+      </a>
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href= "#Lab-01" data-toggle="tab"> Lab-01 </a> </li>
-          <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
-          <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
-          <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
-          <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
-          <li><a href= "#05" data-toggle="tab"> 05 </a> </li>
-          <li><a href= "#06" data-toggle="tab"> 06 </a> </li>
-          <li><a href= "#07" data-toggle="tab"> 07 </a> </li>
-          <li><a href= "#08" data-toggle="tab"> 08 </a> </li>
-          <li><a href= "#09" data-toggle="tab"> 09 </a> </li>
-          <li><a href= "#Exercises" data-toggle="tab"> Exercises </a> </li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <br><br>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="Lab-01">
+  <div  class="ui tab segment lab" data-tab="Lab-01">
     <h1>Objectives</h1>
 <p>The objective of this lab is to install and configure your development workstation and to bring into focus some of the terms and concepts covered in the opening lecture.</p>
   </div>
-
-    <div class="tab-pane fade" id="01">
-      <h1>Install JDK</h1>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Install JDK</h1>
 <p>The first step is to locate the Java Software Development Kit in this Oracle web site:</p>
 <ul>
 <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></li>
@@ -129,9 +145,9 @@ h3
 </ul>
 <p>Keep an eye on where these are installed, as both are important. Depending on how you choose to organise your system, you might have the following folder structure containing the java subsystems:</p>
 <p><img alt="" src="img/00.png"></p>
-    </div>
-    <div class="tab-pane fade" id="02">
-      <h1>Verify JDK</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>Verify JDK</h1>
 <p>Open a Command Prompt in Window. Do this on Windows by selecting the "Start" button, typing 'cmd' into the run field:</p>
 <p><img alt="" src="img/01.png"></p>
 <p>Type cmd into the open field</p>
@@ -142,9 +158,9 @@ h3
 <p>this will verify that java is installed correctly, and will display the version number:</p>
 <p><img alt="" src="img/02.png"></p>
 <p>It will be more recent than the above screenshot.</p>
-    </div>
-    <div class="tab-pane fade" id="03">
-      <h1>Install Eclipse</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>Install Eclipse</h1>
 <p>Eclipse is a free, open source, Integrated Development Environment for Java. We will use it during the labs as the main environment for writing, testing and exploring Java programs.</p>
 <p>Visit the Eclipse web site:</p>
 <ul>
@@ -177,9 +193,9 @@ h3
 <p><img alt="" src="img/11.png"></p>
 <p>and press "Ok". Also press OK on the subsequent dialog and Eclipse should be up and running:</p>
 <p><img alt="" src="img/12.png"></p>
-    </div>
-    <div class="tab-pane fade" id="04">
-      <h1>Verify Eclipse</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>Verify Eclipse</h1>
 <p>We will create a very simple "Hello World" application to test the installation. Eclipse is currently displaying what is called the "Welcome" screen. We can remove this and reveal the standard workbench by pressing the "close" button on the welcome screen:</p>
 <p><img alt="" src="img/13.png"></p>
 <p>This reveal the standard Eclipse "Java Perspective":</p>
@@ -190,9 +206,9 @@ h3
 <p><img alt="" src="img/16.png"></p>
 <p>on the right, giving us a slightly simpler perspective:</p>
 <p><img alt="" src="img/17.png"></p>
-    </div>
-    <div class="tab-pane fade" id="05">
-      <h1>HelloWorld</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="05">
+    <h1>HelloWorld</h1>
 <p>We will now create our first Java Application. We do this by first creating a Java project, selecting File-&gt;New-&gt;Java Project:</p>
 <p><img alt="" src="img/27.png"></p>
 <p>Call the project HelloJava:</p>
@@ -246,9 +262,9 @@ Select the src node in the HelloJava project and right click (to bring up the co
 <p><img alt="" src="img/49.png"></p>
 <p>Pressing it again will expand ....</p>
 <p><img alt="" src="img/50.png"></p>
-    </div>
-    <div class="tab-pane fade" id="06">
-      <h1>Data Structure</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="06">
+    <h1>Data Structure</h1>
 <p>Create a new project - select 'File-&gt;New-&gt;Project'  select "Java Project". Fill out the "New Java Project" wizard as shown:</p>
 <p><img alt="" src="img/51.png"></p>
 <p>Press "Finish".  In the new project, select 'src', right click and select 'new-&gt;package'. Call the package 'models' and press finish:</p>
@@ -353,9 +369,9 @@ public class Main
 <p>Press "Commit" - and now the icons will change again:</p>
 <p><img alt="" src="img/x09.png"></p>
 <p>Although we haven't saved this to any external server, we have preserved the applications current structure.</p>
-    </div>
-    <div class="tab-pane fade" id="07">
-      <h1>Pattern</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="07">
+    <h1>Pattern</h1>
 <p>Create a new package in the eclipse project, called 'utils'</p>
 <p><img alt="" src="img/x10.png"></p>
 <p>Introduce the following class into that package:</p>
@@ -438,9 +454,9 @@ public class FileLogger
 <p>Fill out as shown above (not we do not commit the log file) - and press 'Commit'</p>
 <p>Notice the changes in the package explorer icons:</p>
 <p><img alt="" src="img/x16.png"></p>
-    </div>
-    <div class="tab-pane fade" id="08">
-      <h1>Component</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="08">
+    <h1>Component</h1>
 <p>Navigate to </p>
 <ul>
 <li><a href="http://xstream.codehaus.org">http://xstream.codehaus.org</a></li>
@@ -492,9 +508,9 @@ import pim.log.FileLogger;
 <p><img alt="" src="img/x19.png"></p>
 <p>We have used a component (xstream) to convert an internal data structure into an XML stream, which we have written to a file.</p>
 <p>See if you can commit the changes we have just made to git.</p>
-    </div>
-    <div class="tab-pane fade" id="09">
-      <h1>Framework</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="09">
+    <h1>Framework</h1>
 <p>Visit the following site:</p>
 <ul>
 <li><a href="http://www.playframework.com/">http://www.playframework.com/</a></li>
@@ -509,9 +525,9 @@ import pim.log.FileLogger;
 <li><a href="http://www.playframework.com/documentation/2.1.x/JavaTodoList">http://www.playframework.com/documentation/2.1.x/JavaTodoList</a></li>
 </ul>
 <p>Dont worry to much if some of the concepts are alien, we going to use a specific subset of the features of the framework in our labs. Also, it will be several weeks before we revisit this framework, so you can do the tutorial next week or the week after if you wish.</p>
-    </div>
-    <div class="tab-pane fade" id="Exercises">
-      <h1>Exercises</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="Exercises">
+    <h1>Exercises</h1>
 <h3>Data Structures</h3>
 <p>The Data Structure example - step 6 - used the ArrayList data structure. For an elegant introduction to this, and the collections framework as a whole, take a look at this trial here:</p>
 <ul>
@@ -546,31 +562,45 @@ import pim.log.FileLogger;
 <ul>
 <li><a href="http://mytourbook.sourceforge.net/mytourbook/">http://mytourbook.sourceforge.net/mytourbook/</a></li>
 </ul>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
+
+
+
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Eamonn de Leastar (edeleastar@wit.ie). Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
     </div>
-</div>
-<br> <br>
-
-
-    </div>
-
-
-<div class="credits navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <small>
-    Prepared by Eamonn de Leastar (edeleastar@wit.ie). Except where otherwise noted, this content is licensed under a
-    <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-        target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-    </a>
-    </small>
-</div>    <script>
+  </div>    <script>
 
 $(document).ready(function()
 {
-  $("img").addClass ("img-responsive");
+  $("img").addClass ("ui image");
 
-  $(".tab-content img").each(function()
-  {
-    var title = this.alt;
-    $(this).after('<figcaption class="caption"> <em>'+ title +'</em></figcaption>');
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
   });
 })    </script>
 

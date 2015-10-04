@@ -7,11 +7,12 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
 
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
@@ -45,7 +46,7 @@ figcaption
 
   <body>
 
-    <div class="container">
+  <div class="ui container">
 <style>
 
 
@@ -80,39 +81,46 @@ h3
 
 </style>
 
-<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
-      <div class="navbar-brand">
-        <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
-        Inheritance & Collections
-      </div>
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Inheritance & Collections
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-03">
+        Lab-03
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+      <a class="item" data-tab="05">
+        05
+      </a>
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href= "#Lab-03" data-toggle="tab"> Lab-03 </a> </li>
-          <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
-          <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
-          <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
-          <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
-          <li><a href= "#05" data-toggle="tab"> 05 </a> </li>
-          <li><a href= "#Exercises" data-toggle="tab"> Exercises </a> </li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <br><br>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="Lab-03">
+  <div  class="ui tab segment lab" data-tab="Lab-03">
     <h1>Objectives</h1>
 <p>Extend the pacemaker application to include Activity and Location classes + associated commands. Once these are in place, incorporate a serialization mechanism to enable users &amp; activities to be persisted to a file. We will then try to generalize this mechanism, which will enable us to experiment with alternative serialization formats.</p>
   </div>
-
-    <div class="tab-pane fade" id="01">
-      <h1>Activity &amp; Location classes</h1>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Activity &amp; Location classes</h1>
 <p>These are solution classes to last weeks exercises:</p>
 <h3>Activity</h3>
 <pre><code class="java">package models;
@@ -209,9 +217,9 @@ public class Location
   } 
 }
 </code></pre>
-    </div>
-    <div class="tab-pane fade" id="02">
-      <h2>API + Commands</h2>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h2>API + Commands</h2>
 <p>These are the new features for PacemakerAPI</p>
 <pre><code class="java">  public void createActivity(Long id, String type, String location, double distance)
   {
@@ -285,9 +293,9 @@ pc&gt;
 </code></pre>
 
 <p>Commit these changes with a suitable message</p>
-    </div>
-    <div class="tab-pane fade" id="03">
-      <h2>Serialization</h2>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h2>Serialization</h2>
 <p>We would like our system to remember our user and activity data between sessions. In lab 1 we explored the xtream component briefly. We will reuse it here to save the entire model on exit form the application, and reload on startup.</p>
 <p>Here is a refactoring of the main method to bring in load/store to the application life cycle:</p>
 <pre><code class="java">  public static void main(String[] args) throws Exception
@@ -352,9 +360,9 @@ pc&gt;
 <p>If all goes to plan, and say you run the script we explored earlier, then in eclipse you should be able to examine the datastore file in an xml editor. It could look like this:</p>
 <p><img alt="" src="img/00.png"></p>
 <p>Commit these changes with a suitable message</p>
-    </div>
-    <div class="tab-pane fade" id="04">
-      <h2>Generalizing the Serializer</h2>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h2>Generalizing the Serializer</h2>
 <p>We have implemnted an xstream based serialization or our model. However, we may be interested in revising this later, selecting a different format or even serialiation component. Lets try to abstract the serializer feature a little so we can prepare for such a switch.</p>
 <p>First, introduce into the utils package a new interface:</p>
 <pre><code class="java">package utils;
@@ -788,9 +796,9 @@ pm&gt;
 </code></pre>
 
 <p>However - there is something profoundly problematic with the above. What is it that is wrong (it is difficult to spot)?</p>
-    </div>
-    <div class="tab-pane fade" id="05">
-      <h2>Object References and Serialization</h2>
+  </div>
+  <div  class="ui tab segment lab" data-tab="05">
+    <h2>Object References and Serialization</h2>
 <p>The problem with our current serializer is that the three Maps serialized are completely independent - even though the maps in memory prior to serialization contain shared objects. This is apparent from this structural view here:</p>
 <p><img alt="" src="img/01.png"></p>
 <p>Correcting this is relatively straightforward. Object referential context is only preserved over a single writeObject operation - we have been doing several on our serializer - see the relevant fragments of the read and write methods:</p>
@@ -821,9 +829,9 @@ pm&gt;
 
 <p>This produces a different serialization - with objects shared via references. You can see this more easily from the structural view:</p>
 <p><img alt="" src="img/02.png"></p>
-    </div>
-    <div class="tab-pane fade" id="Exercises">
-      <h1>Exercises</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="Exercises">
+    <h1>Exercises</h1>
 <h2>Archive of project so far...</h2>
 <ul>
 <li><a href="archives/pacemaker-console-lab03.zip">pacemaker-console-lab03.zip</a></li>
@@ -896,31 +904,45 @@ s       store           ()
 </code></pre>
 
 <p>Prioritize these commands from simplest to most complex, and consider tackling the simpler commands first.</p>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
+
+
+
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Eamonn de Leastar (edeleastar@wit.ie). Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
     </div>
-</div>
-<br> <br>
-
-
-    </div>
-
-
-<div class="credits navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <small>
-    Prepared by Eamonn de Leastar (edeleastar@wit.ie). Except where otherwise noted, this content is licensed under a
-    <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-        target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-    </a>
-    </small>
-</div>    <script>
+  </div>    <script>
 
 $(document).ready(function()
 {
-  $("img").addClass ("img-responsive");
+  $("img").addClass ("ui image");
 
-  $(".tab-content img").each(function()
-  {
-    var title = this.alt;
-    $(this).after('<figcaption class="caption"> <em>'+ title +'</em></figcaption>');
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
   });
 })    </script>
 

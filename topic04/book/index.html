@@ -7,11 +7,12 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-     <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
 
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
@@ -45,7 +46,7 @@ figcaption
 
   <body>
 
-    <div class="container">
+  <div class="ui container">
 <style>
 
 
@@ -80,44 +81,61 @@ h3
 
 </style>
 
-<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
-      <div class="navbar-brand">
-        <a onclick="window.history.back()" href="#"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> </a>
-        Serialization & Test Driven Development I
-      </div>
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Serialization & Test Driven Development I
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-04">
+        Lab-04
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+      <a class="item" data-tab="05">
+        05
+      </a>
+      <a class="item" data-tab="06">
+        06
+      </a>
+      <a class="item" data-tab="07">
+        07
+      </a>
+      <a class="item" data-tab="08">
+        08
+      </a>
+      <a class="item" data-tab="09">
+        09
+      </a>
+      <a class="item" data-tab="10">
+        10
+      </a>
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href= "#Lab-04" data-toggle="tab"> Lab-04 </a> </li>
-          <li><a href= "#01" data-toggle="tab"> 01 </a> </li>
-          <li><a href= "#02" data-toggle="tab"> 02 </a> </li>
-          <li><a href= "#03" data-toggle="tab"> 03 </a> </li>
-          <li><a href= "#04" data-toggle="tab"> 04 </a> </li>
-          <li><a href= "#05" data-toggle="tab"> 05 </a> </li>
-          <li><a href= "#06" data-toggle="tab"> 06 </a> </li>
-          <li><a href= "#07" data-toggle="tab"> 07 </a> </li>
-          <li><a href= "#08" data-toggle="tab"> 08 </a> </li>
-          <li><a href= "#09" data-toggle="tab"> 09 </a> </li>
-          <li><a href= "#10" data-toggle="tab"> 10 </a> </li>
-          <li><a href= "#Exercises" data-toggle="tab"> Exercises </a> </li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <br><br>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="Lab-04">
+  <div  class="ui tab segment lab" data-tab="Lab-04">
     <h1>Objectives</h1>
 <p>Equip Pacemaker with JUint libraries and then introduce a range of tests to verify essential features. Correct issues that arise as a result of the tests, becoming familiar with the fail/pass/refactor/pass cycle. Review the outstanding command set of the application.</p>
   </div>
-
-    <div class="tab-pane fade" id="01">
-      <h1>Junit</h1>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Junit</h1>
 <p>We will introduce unit testing infrastructure + unit tests to exercise the features of the app developed so far.</p>
 <p>First, locate the project properties (context menu-&gt;Build Path-&gt;Configure Build Path):</p>
 <p><img alt="" src="img/00.png"></p>
@@ -128,9 +146,9 @@ h3
 <p>Now create a new 'source' folder in the project called 'test'. Once created, replicate the package structure in this folder. You workspace should look like this:</p>
 <p><img alt="" src="img/03.png"></p>
 <p>The new packages are empty for the moment.</p>
-    </div>
-    <div class="tab-pane fade" id="02">
-      <h1>LocationTest</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>LocationTest</h1>
 <p>Create a new unit test in the new models package:</p>
 <p><img alt="" src="img/04.png"></p>
 <p>Call the test "LocationTest"</p>
@@ -190,9 +208,9 @@ public class LocationTest
 
 <p>All should now be passing:</p>
 <p><img alt="" src="img/09.png"></p>
-    </div>
-    <div class="tab-pane fade" id="03">
-      <h1>Fixtures</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>Fixtures</h1>
 <p>We can simplify the test marginally by sharing the object initializations between tests:</p>
 <pre><code class="java">package models;
 
@@ -242,9 +260,9 @@ public class LocationTest
 </code></pre>
 
 <p>Ready this carefully - the tests are identical, with the setup/tearDown methods called before/after each individual test.</p>
-    </div>
-    <div class="tab-pane fade" id="04">
-      <h1>UserTest &amp; ActivityTest</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>UserTest &amp; ActivityTest</h1>
 <p>Include this test:</p>
 <pre><code class="java">package models;
 
@@ -340,9 +358,9 @@ public class ActivityTest
 
 <p>All these tests should pass, and should be able to run all test in one test runner:</p>
 <p><img alt="" src="img/10.png"></p>
-    </div>
-    <div class="tab-pane fade" id="05">
-      <h1>Static Fixtures</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="05">
+    <h1>Static Fixtures</h1>
 <p>In preparation for testing the PacemakerAPI, it may be useful to integrate all the static fixture data into a single class:</p>
 <pre><code class="java">package models;
 
@@ -478,9 +496,9 @@ public class UserTest
 
 <p>Integrate these version and verify that app passes all tests.</p>
 <p>Commit these changes with a suitable message.</p>
-    </div>
-    <div class="tab-pane fade" id="06">
-      <h1>First PacemakerAPI Test</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="06">
+    <h1>First PacemakerAPI Test</h1>
 <p>PacemakerAPI is a more sophisticated class, whose testing will require a little more discipline and focus. We can start with a skeleton, which will include static imports + a fixture:</p>
 <pre><code class="java">package models;
 
@@ -633,9 +651,9 @@ public class PacemakerAPITest
 <p>What, precisely, will happen when this call is triggered in Activity.equals?</p>
 <pre><code class="java">          &amp;&amp; Objects.equal(route,     other.route);    
 </code></pre>
-    </div>
-    <div class="tab-pane fade" id="07">
-      <h1>More PacemakerAPITests</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="07">
+    <h1>More PacemakerAPITests</h1>
 <p>Introduce this unit test</p>
 <pre><code class="java">  @Test
   public void testUsers()
@@ -736,9 +754,9 @@ public class PacemakerAPITest
 </code></pre>
 
 <p>Note the adjustments made to testUser in this context.</p>
-    </div>
-    <div class="tab-pane fade" id="08">
-      <h1>Activities Tests</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="08">
+    <h1>Activities Tests</h1>
 <p>These three methods in PacemakerAPI are untested:</p>
 <pre><code class="java">  public void createActivity(Long id, String type, String location, double distance)
 
@@ -828,9 +846,9 @@ public class PacemakerAPITest
     }
   } 
 </code></pre>
-    </div>
-    <div class="tab-pane fade" id="09">
-      <h1>Persistence Tests</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="09">
+    <h1>Persistence Tests</h1>
 <p>Create a new test specifically for persistence:</p>
 <pre><code class="java">
 public class PersistenceTest
@@ -998,17 +1016,17 @@ public class PersistenceTest
 </code></pre>
 
 <p>This is very clumsy and poorly abstracted code. Are there alternative approaches?</p>
-    </div>
-    <div class="tab-pane fade" id="10">
-      <h1>Test Packages</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="10">
+    <h1>Test Packages</h1>
 <p>Currently the app is structured like this in eclipse:</p>
 <p><img alt="" src="img/11.png"></p>
 <p>The test classes should be adjusted to better align with the packages they are testing. Refactor the project to look like this:</p>
 <p><img alt="" src="img/12.png"></p>
 <p>It should be possible to do this just using drag and drop within the package explorer.</p>
-    </div>
-    <div class="tab-pane fade" id="Exercises">
-      <h1>Exercises</h1>
+  </div>
+  <div  class="ui tab segment lab" data-tab="Exercises">
+    <h1>Exercises</h1>
 <p>Archive of lab so far:</p>
 <ul>
 <li><a href="archives/pacemaker-console-lab04.zip">pacemaker-console-lab04.zip</a></li>
@@ -1070,31 +1088,45 @@ cff     change-file-format  (file format: xml, json)
 <ul>
 <li><a href="https://code.google.com/p/java-ascii-table">https://code.google.com/p/java-ascii-table</a></li>
 </ul>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
+
+
+
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Eamonn de Leastar (edeleastar@wit.ie). Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
     </div>
-</div>
-<br> <br>
-
-
-    </div>
-
-
-<div class="credits navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <small>
-    Prepared by Eamonn de Leastar (edeleastar@wit.ie). Except where otherwise noted, this content is licensed under a
-    <a href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-        target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-    </a>
-    </small>
-</div>    <script>
+  </div>    <script>
 
 $(document).ready(function()
 {
-  $("img").addClass ("img-responsive");
+  $("img").addClass ("ui image");
 
-  $(".tab-content img").each(function()
-  {
-    var title = this.alt;
-    $(this).after('<figcaption class="caption"> <em>'+ title +'</em></figcaption>');
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
   });
 })    </script>
 
