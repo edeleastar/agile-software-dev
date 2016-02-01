@@ -8,13 +8,13 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
 
      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
-     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
-     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/languages/java.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
 
       <style>
@@ -83,65 +83,69 @@ figcaption
 
 
 <div class="ui four doubling stackable cards">
-      <a class="ui card" href="./talk-1/a-liskov-substitution-principle.pdf">
+      <div class="ui card">
     <div class="content">
-      <div class="right floated meta"> <i class="film large icon"></i></div>
-      <div class="header"> Liskov Substitution Principle </div>
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Liskov Substitution Principle </div>
     </div>
-    <div class="ui bordered rounded image">
-      <img src="./talk-1/a-liskov-substitution-principle.png">
-    </div>
+    <a href="./talk-1/a-liskov-substitution-principle.pdf">
+      <img class="ui bordered rounded image" src="./talk-1/a-liskov-substitution-principle.png">
+    </a>
     <div class="content">
       <div class="description">
          <p>Another of the SOLID principles - this time a more subtle take on inheritance, emphasizing the core behaviours expected by the relationship.</p>
       </div>
     </div>
-  </a>
+  </div>
 
-      <a class="ui card" href="./talk-2/a-play-2.pdf">
+
+      <div class="ui card">
     <div class="content">
-      <div class="right floated meta"> <i class="film large icon"></i></div>
-      <div class="header"> Play Framework </div>
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Play Framework </div>
     </div>
-    <div class="ui bordered rounded image">
-      <img src="./talk-2/a-play-2.png">
-    </div>
+    <a href="./talk-2/a-play-2.pdf">
+      <img class="ui bordered rounded image" src="./talk-2/a-play-2.png">
+    </a>
     <div class="content">
       <div class="description">
          <p>A quick tour of the Play Framework, providing just enough background to be able to make sense of Pacemaker 2.0 and its implementation.</p>
       </div>
     </div>
-  </a>
+  </div>
 
-      <a class="ui card" href="./talk-3/c-semantic-html.pdf">
+
+      <div class="ui card">
     <div class="content">
-      <div class="right floated meta"> <i class="film large icon"></i></div>
-      <div class="header"> Semantic HTML + UI </div>
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Semantic HTML + UI </div>
     </div>
-    <div class="ui bordered rounded image">
-      <img src="./talk-3/c-semantic-html.png">
-    </div>
+    <a href="./talk-3/c-semantic-html.pdf">
+      <img class="ui bordered rounded image" src="./talk-3/c-semantic-html.png">
+    </a>
     <div class="content">
       <div class="description">
          <p>The final pacemaker lab is based in semantich HTML elements + the semntic UI CSS library. Here the salient features of both are reviewed.</p>
       </div>
     </div>
-  </a>
+  </div>
 
-      <a class="ui card" href="./talk-4/d-pacemakerplay.pdf">
+
+      <div class="ui card">
     <div class="content">
-      <div class="right floated meta"> <i class="film large icon"></i></div>
-      <div class="header"> Pacemaker Play Web </div>
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Pacemaker Play Web </div>
     </div>
-    <div class="ui bordered rounded image">
-      <img src="./talk-4/d-pacemakerplay.png">
-    </div>
+    <a href="./talk-4/d-pacemakerplay.pdf">
+      <img class="ui bordered rounded image" src="./talk-4/d-pacemakerplay.png">
+    </a>
     <div class="content">
       <div class="description">
          <p>THe final lab incorporates a UI based on the server side templating library built into Play + its core controler/model infrastructure. </p>
       </div>
     </div>
-  </a>
+  </div>
+
 
   </div>
    </div>
@@ -163,6 +167,7 @@ figcaption
 $(document).ready(function()
 {
   $("img").addClass ("ui image");
+  $('.ui.embed').embed();
 
   var images = $(".lab img");
   jQuery.each(images, function(i)  {
@@ -175,6 +180,8 @@ $(document).ready(function()
       $(div_label).insertBefore(images[i]);
     }
   });
+
+
 })    </script>
 
   </body>
